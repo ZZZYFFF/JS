@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oInput1 = document.getElementById('input01');
+			var oInput2 = document.getElementById('input02');
+			var oFuhao = document.getElementById('fuhao');
+			var oBtn = document.getElementById('btn');
+
+
+			oBtn.onclick = function(){
+
+				var num1 = oInput1.value;
+				var num2 = oInput2.value;
+				var fuhao = oFuhao.value;
+
+				if(num1 == "" || num2 == ""){
+					alert("输入框不能为空！");
+						return
+				}
+				if(isNaN(num1) || isNaN(num2)){
+					alert('请输入数字！');
+					return
+				}
+
+				switch(fuhao){
+					case'0':
+						alert(((parseFloat(num1)*100)+(parseFloat(num2)*100))/100);
+						break;
+					case'1':
+						alert((parseFloat(num01)*100-parseFloat(num02)*100)/100);
+						break;
+					case'2':
+						alert(((parseFloat(num01)*100)*(parseFloat(num02)*100))/10000);
+						break;
+					case'3':
+						alert((parseFloat(num01)*100)/(parseFloat(num02)*100));
+						break;
+
+
+				}
+				
+			}
+
+
+
+
+		}
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<h1>计算器</h1>
+	<input type="text" id="input01">
+	<select id="fuhao">
+		<option value="0">+</option>
+		<option value="1">-</option>
+		<option value="2">*</option>
+		<option value="3">/</option>
+	</select>
+	<input type="text" id="input02">
+	<input type="button" value="计算" id="btn">
+</body>
+</html>
